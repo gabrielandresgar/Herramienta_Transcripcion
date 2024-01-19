@@ -113,7 +113,8 @@ const styles = StyleSheet.create({
         padding: 15,
         backgroundColor: '#e8e8e8',
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+       
     },
     centeredView: {
         flex: 1,

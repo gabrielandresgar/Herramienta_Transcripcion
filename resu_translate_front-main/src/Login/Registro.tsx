@@ -56,6 +56,7 @@ export const Registro = () => {
                     })
                     .catch(error => { console.log(error) });
 
+
             }
         }
     }
@@ -66,7 +67,7 @@ export const Registro = () => {
                 style={{ width: 50, alignSelf: 'flex-start' }}>
                 <FlechaRgreso fill={'#000'} stroke={'#000'} />
             </Pressable>
-            <Text style={{ fontSize: 40, textAlign: 'center', padding: 10, color: '#303030' }}>Crear una Nueva Cuenta</Text>
+            <Text style={{ fontSize: 40, textAlign: 'center', padding: 10, color: '#000000' }}>Crear una Nueva Cuenta</Text>
             <Toast
                 position='top'
                 bottomOffset={20}
@@ -89,7 +90,7 @@ export const Registro = () => {
                                 inputAndroid: {
                                     height: '100%',
                                     fontSize: 20,
-                                    color: '#303030',
+                                    color: '#000000',
                                     backgroundColor: '#fff'
                                 },
                                 inputIOS: {
@@ -164,7 +165,7 @@ export const Registro = () => {
                 <Pressable
                     onPress={() => { HandleForm() }}
                     style={styles.button}>
-                    <Text style={{ color: '#e8e8e8', textAlign: 'center', fontSize: 18 }}>Crear Cuenta</Text>
+                    <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Crear Cuenta</Text>
                 </Pressable>
             </ScrollView>
         </View>
@@ -180,26 +181,26 @@ const styles = StyleSheet.create({
     label: {
         fontSize: 18,
         marginBottom: 8,
-        color: '#333',
+        color: '#000000',
         alignSelf: 'flex-start'
     },
     input: {
         height: 45,
         fontSize: 18,
         width: '100%',
-        borderColor: 'gray',
+        borderColor: '#3097D1',
         borderWidth: 1,
         marginBottom: 8,
         paddingLeft: 8,
-        borderRadius: 4,
+        borderRadius: 50,
         overflow: 'hidden',
-        color: '#303030'
+        color: '#000000'
     },
     button: {
         marginTop: 15,
         padding: 10,
-        backgroundColor: '#303030',
-        borderRadius: 8,
+        backgroundColor: '#3097D1',
+        borderRadius: 50,
         width: '55%',
         alignSelf: 'center',
     },
@@ -211,7 +212,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 8,
         paddingLeft: 8,
-        borderRadius: 4,
+        borderRadius: 50,
         overflow: 'hidden'
     }
 });

@@ -48,7 +48,7 @@ export const Login = () => {
     }
 
     return (
-        <View style={{ flex: 1, backgroundColor: '#303030' }}>
+        <View style={{ flex: 1, backgroundColor: '#004484' }}>
             <View style={{ flex: 1, alignItems: 'center', marginTop: '25%', backgroundColor: '#fff', borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
                 <Image source={require('../../assets/micro.png')} style={{ borderRadius: 1000, width: 120, height: 120, marginTop: 25, borderWidth: 0.9, borderColor: '#0025AE' }} />
                 <Text style={{ marginTop: 5, fontSize: 32, color: '#0025AE', fontWeight: '500' }}>RESU TRANSLATE</Text>
@@ -79,7 +79,7 @@ export const Login = () => {
                 </Pressable>
 
                 <Pressable style={styles.registro} onPress={navigateToRegistro}>
-                    <Text style={{ color: '#303030', textAlign: 'center', fontSize: 18 }}>Registrarse</Text>
+                    <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Registrarse</Text>
                 </Pressable>
 
             </View>
@@ -101,24 +101,24 @@ const styles = StyleSheet.create({
         height: 45,
         fontSize: 18,
         width: '80%',
-        borderColor: 'gray',
+        borderColor: '#3097D1',
         borderWidth: 1,
         marginBottom: 16,
         paddingLeft: 8,
-        borderRadius: 4
+        borderRadius: 50
     },
     button: {
         marginTop: 15,
         padding: 10,
-        backgroundColor: '#303030',
-        borderRadius: 8,
+        backgroundColor: '#3097D1',
+        borderRadius: 50,
         width: '55%'
     },
     registro: {
         marginTop: 25,
         padding: 10,
-        backgroundColor: '#fff',
-        borderRadius: 8,
+        backgroundColor: '#3097D1',
+        borderRadius: 50,
         width: '55%',
         borderWidth: 0.9,
         borderColor: '#30303'

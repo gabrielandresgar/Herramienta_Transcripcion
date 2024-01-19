@@ -37,8 +37,8 @@ export function MyTabs() {
                         screenOptions={{
                             tabBarActiveTintColor: 'black',
                             tabBarInactiveTintColor: 'black',
-                            tabBarLabelStyle: { fontWeight: 'bold', color: '#fff' },
-                            tabBarStyle: { backgroundColor: '#303030' },
+                            tabBarLabelStyle: { fontWeight: 'bold', color: '#ffffff' },
+                            tabBarStyle: { backgroundColor: '#004484' },
                             tabBarIndicatorStyle: { backgroundColor: 'white', height: 5 },
                         }}
                     >
