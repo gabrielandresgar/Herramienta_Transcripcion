@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Image, View, Text, TextInput, StyleSheet, Button, Pressable } from 'react-native'
+import { Image, View, Text, TextInput, StyleSheet, Button, Pressable, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { AppContext } from '../Context/AppContext';
 import Toast from 'react-native-toast-message'
@@ -51,7 +51,7 @@ export const Login = () => {
         <View style={{ flex: 1, backgroundColor: '#004484' }}>
             <View style={{ flex: 1, alignItems: 'center', marginTop: '25%', backgroundColor: '#fff', borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
                 <Image source={require('../../assets/micro.png')} style={{ borderRadius: 1000, width: 120, height: 120, marginTop: 25, borderWidth: 0.9, borderColor: '#0025AE' }} />
-                <Text style={{ marginTop: 5, fontSize: 32, color: '#0025AE', fontWeight: '500' }}>RESU TRANSLATE</Text>
+                <Text style={{ marginTop: 5, fontSize: 32, color: '#0025AE', fontWeight: '500' }}>SummaryJG</Text>
                 <Toast
                     position='bottom'
                     bottomOffset={20}
@@ -77,10 +77,11 @@ export const Login = () => {
                 <Pressable onPress={() => { handleLogin() }} style={styles.button}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Iniciar sesión</Text>
                 </Pressable>
-
+               
                 <Pressable style={styles.registro} onPress={navigateToRegistro}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Registrarse</Text>
                 </Pressable>
+                
 
             </View>
         </View>

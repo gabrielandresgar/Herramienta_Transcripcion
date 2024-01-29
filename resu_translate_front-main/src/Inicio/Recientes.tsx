@@ -6,7 +6,7 @@ interface IRecientes {
 }
 export const Recientes = () => {
     const data: IRecientes[] = [
-        { title: 'Computación', image: require('../../assets/compuNube.png') },
+        { title: 'Computo', image: require('../../assets/compuNube.png') },
         { title: 'Ia', image: require('../../assets/IA.png') },
         { title: 'Ia', image: require('../../assets/IA.png') },
         { title: 'Ia', image: require('../../assets/IA.png') },

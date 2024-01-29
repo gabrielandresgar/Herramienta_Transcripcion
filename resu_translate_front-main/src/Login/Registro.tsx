@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import RNPickerSelect from 'react-native-picker-select';
 import React, { useContext, useState } from 'react'
-import { View, Button, Text, StyleSheet, TextInput, Pressable } from 'react-native'
+import { View, Button, Text, StyleSheet, TextInput, Pressable, Touchable, TouchableOpacity } from 'react-native'
 import { AppContext } from '../Context/AppContext';
 import { Usuario } from '../Model/Usuario';
 import FlechaRgreso from '../../assets/SVG/FlechaRegreso';
@@ -161,12 +161,13 @@ export const Registro = () => {
                             <Text></Text>
                     }
                 </View>
-
-                <Pressable
+                <TouchableOpacity>
+                    <Pressable
                     onPress={() => { HandleForm() }}
                     style={styles.button}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Crear Cuenta</Text>
-                </Pressable>
+                    </Pressable>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     )
@@ -200,7 +201,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         padding: 10,
         backgroundColor: '#3097D1',
-        borderRadius: 50,
+        borderRadius: 8,
         width: '55%',
         alignSelf: 'center',
     },
