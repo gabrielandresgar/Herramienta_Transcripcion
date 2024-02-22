@@ -20,7 +20,6 @@ const AppProvider: React.FC<Props> = ({ children }) => {
     const [idVideo, setIdVideo] = useState("");
     const [textoWhisper, setTextoWhisper] = useState("");
     const [lenuaje, setLenguaje] = useState("Spanish");
-    const [idClase, setIdClase] = useState("");
     return (
         <AppContext.Provider
             value={{
@@ -35,9 +34,7 @@ const AppProvider: React.FC<Props> = ({ children }) => {
                 textoWhisper: textoWhisper,
                 setTextoWhisper: setTextoWhisper,
                 lenguaje: lenuaje,
-                setLenguaje: setLenguaje,
-                idClase: idClase,
-                setIdClase: setIdClase
+                setLenguaje: setLenguaje
             }}
         >
             {children}

@@ -16,6 +16,4 @@ export type AppContextState = {
     setTextoWhisper: Dispatch<React.SetStateAction<string>>;
     lenguaje: string;
     setLenguaje: Dispatch<React.SetStateAction<string>>;
-    idClase: string;
-    setIdClase: Dispatch<React.SetStateAction<string>>;
 };

@@ -21,7 +21,7 @@ export const Carrusel = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={{ textAlign: 'left', fontSize: 32, width: '100%', marginLeft: 40, marginBottom: 20, color: '#ffffff' }}>Materia</Text>
+            <Text style={{ textAlign: 'left', fontSize: 32, width: '100%', marginLeft: 40, marginBottom: 20, color: '#e8e8e8' }}>Materia</Text>
             <Carousel
                 vertical={false}
                 layout="default"

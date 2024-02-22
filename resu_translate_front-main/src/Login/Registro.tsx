@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import RNPickerSelect from 'react-native-picker-select';
 import React, { useContext, useState } from 'react'
-import { View, Button, Text, StyleSheet, TextInput, Pressable, Touchable, TouchableOpacity } from 'react-native'
+import { View, Button, Text, StyleSheet, TextInput, Pressable } from 'react-native'
 import { AppContext } from '../Context/AppContext';
 import { Usuario } from '../Model/Usuario';
 import FlechaRgreso from '../../assets/SVG/FlechaRegreso';
@@ -128,7 +128,7 @@ export const Registro = () => {
                     <Text style={styles.label}>Contraseña:</Text>
                     <TextInput
                         style={error ? styles.redBorder : styles.input}
-                        placeholder="Ingrese su contraseñna"
+                        placeholder="Ingrese su contraseña"
                         onChangeText={(text) => setUsuario({ ...usuario, contrasenia: text })}
                         value={usuario?.contrasenia}
                         keyboardType="default"
@@ -161,13 +161,12 @@ export const Registro = () => {
                             <Text></Text>
                     }
                 </View>
-                <TouchableOpacity>
-                    <Pressable
+
+                <Pressable
                     onPress={() => { HandleForm() }}
                     style={styles.button}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Crear Cuenta</Text>
-                    </Pressable>
-                </TouchableOpacity>
+                </Pressable>
             </ScrollView>
         </View>
     )

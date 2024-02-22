@@ -7,10 +7,10 @@ export const Materias = () => {
     const contexto = useContext(AppContext);
     const [materia, setMateria] = useState<Materia[]>();
     const imagenes = [
-        require('../../assets/negocios.jpg'),
-        require('../../assets/CienciaDatos.png'),
         require('../../assets/compuNube.png'),
-        require('../../assets/IA.png')
+        require('../../assets/IA.png'),
+        require('../../assets/negocios.jpg'),
+        require('../../assets/CienciaDatos.png')
     ]
     useEffect(() => {
         const peticion = async () => {
@@ -52,7 +52,7 @@ export const Materias = () => {
                             <View style={{ flex: 1, padding: 10 }}>
                                 <Text style={{ fontSize: 22, fontWeight: '400', color: '#000' }}>{item.nombre}</Text>
                                 <Text style={{ marginTop: 10 }}>
-                                    {item.semestre}
+                                    {item.semestre} Semestre
                                 </Text>
                                 <View style={{ borderBottomWidth: 0.9, borderBottomColor: 'blue', marginTop: 15 }} />
                             </View>

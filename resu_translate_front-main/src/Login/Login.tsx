@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Image, View, Text, TextInput, StyleSheet, Button, Pressable, TouchableOpacity } from 'react-native'
+import { Image, View, Text, TextInput, StyleSheet, Button, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { AppContext } from '../Context/AppContext';
 import Toast from 'react-native-toast-message'
@@ -77,11 +77,10 @@ export const Login = () => {
                 <Pressable onPress={() => { handleLogin() }} style={styles.button}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Iniciar sesión</Text>
                 </Pressable>
-               
+
                 <Pressable style={styles.registro} onPress={navigateToRegistro}>
                     <Text style={{ color: '#fff', textAlign: 'center', fontSize: 18 }}>Registrarse</Text>
                 </Pressable>
-                
 
             </View>
         </View>
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 16,
         paddingLeft: 8,
-        borderRadius: 50
+        borderRadius: 4
     },
     button: {
         marginTop: 15,

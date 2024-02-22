@@ -44,7 +44,6 @@ export const Clases = () => {
                             onPress={() => {
                                 navigate.navigate('Clase');
                                 contexto.setIdVideo(item.id_video);
-                                contexto.setIdClase(item.id_materia);
                             }}
                             style={styles.contenedorClase}>
                             <Text style={{ fontSize: 22, fontWeight: '400', color: '#000' }}>{item.nombre}</Text>
