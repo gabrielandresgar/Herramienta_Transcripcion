@@ -4,11 +4,25 @@ import { StyleSheet } from 'react-native';
 import { ScrollView, View, Text, Pressable } from 'react-native'
 import { Clase } from '../Model/Clases';
 import { AppContext } from '../Context/AppContext';
+import RNPickerSelect from 'react-native-picker-select';
+
 
 export const Clases = () => {
     const navigate = useNavigation();
     const contexto = useContext(AppContext);
     const [clases, setClases] = useState<Clase[]>();
+    const [clasesFiltradas, setClasesFiltradas] = useState<Clase[]>();
+    const [nombresUnicos, setNombresUnicos] = useState([]);
+
+    const filtro = (value: string) => {
+        const clasesFiltradas = clases?.filter((item) => item.nombre === value);
+        if (clasesFiltradas?.length === 0){
+            setClasesFiltradas(clases);
+        }
+        setClasesFiltradas(clasesFiltradas);
+                                                                                                                                                                                                                                                                    
+    }
+
     useEffect(() => {
         const peticion = async () => {
             const clase = {
@@ -24,7 +38,22 @@ export const Clases = () => {
                     body: JSON.stringify(clase)
                 })
                     .then(res => { return res.json() })
-                    .then(data => { setClases(data); })
+                    .then(data => { 
+                        setClasesFiltradas(data);
+                        setClases(data);
+                    
+                        const nombresUnicos = data.reduce((acc: { label: any; value: any; }[], materia: { nombre: string; }) => {
+                            const nombreNormalizado = materia.nombre.trim().toLowerCase();
+                      
+                            if (!acc.some(item => item.label.trim().toLowerCase() === nombreNormalizado)) {
+                              acc.push({ label: materia.nombre, value: materia.nombre });
+                            }
+                            return acc;
+                          }, []);
+
+                        setNombresUnicos(nombresUnicos);
+                       
+                    })
 
             } catch (error) {
                 console.error('Error en la petición:', error);
@@ -35,14 +64,36 @@ export const Clases = () => {
     }, [])
     return (
         <ScrollView style={{ backgroundColor: '#303030', flex: 1 }}>
+            <View style={styles.input}>
+            <RNPickerSelect
+                    onValueChange={(value) => { filtro(value); }}
+                    items={nombresUnicos}
+                    placeholder={{
+                        label: 'Selecciona la clase',
+                        value: null,
+                    }}
+                    style={{
+                        inputAndroid: {
+                            height: '100%',
+                            fontSize: 20,
+                            color: '#303030',
+                            backgroundColor: '#fff'
+                        },
+                        inputIOS: {
+                            fontSize: 16,
+                            color: '#fff',
+                        },
+                    }}
+                />
+            </View>
+            
             {
-                clases !== undefined &&
-                clases.map((item, idx) => {
+                clasesFiltradas?.map((item, idx) => {
                     return (
                         <Pressable
                             key={idx}
                             onPress={() => {
-                                navigate.navigate('Clase');
+                                navigate.navigate('Clase' as never);
                                 contexto.setIdVideo(item.id_video);
                             }}
                             style={styles.contenedorClase}>
@@ -78,6 +129,20 @@ const styles = StyleSheet.create({
     descripcion: {
         marginTop: 10,
         color: '#303030'
+    },
+    input: {
+        height: 45,
+        fontSize: 18,
+        width: '75%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginTop: 20,
+        marginBottom: 8,
+        paddingLeft: 8,
+        borderRadius: 4,
+        overflow: 'hidden',
+        color: '#303030',
+        alignSelf: 'center'
     }
 
 })

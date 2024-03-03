@@ -9,8 +9,8 @@ export const Materias = () => {
     const imagenes = [
         require('../../assets/compuNube.png'),
         require('../../assets/IA.png'),
-        require('../../assets/negocios.jpg'),
-        require('../../assets/CienciaDatos.png')
+        require('../../assets/CienciaDatos.png'),
+        require('../../assets/desarrollo.png')
     ]
     useEffect(() => {
         const peticion = async () => {
